@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-page-node-id="GgGh8aD6bYEFmyG6sK3GwE">
+<head data-page-node-id="X1sz58VmQxEDlhjPRyPOh0">
+<meta charset="UTF-8" data-page-node-id="xY93vsnZBIwaggdULgN3U7">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="tdlEAFlXR8Ckb9mIai617F">
+<title>About us — Zhongxiqiao Education · Building bridges for Sino–Spanish education</title>
+<meta name="description" content="Beijing Zhongxiqiao Education — founded in 2011, one of China's earliest consultancies focused exclusively on Spain. Beijing head office and Madrid office, with resident staff in major Chinese cities and a resident coordinator in Barcelona." data-page-node-id="hBbkWIvdAchh6D703KMGQK">
+<style>
+  :root{
+    --brand-900:#7C2D12; --brand-800:#9A3412; --brand-700:#C2410C; --brand-600:#EA580C;
+    --brand-100:#FED7AA; --brand-50:#FFF7ED; --mist:#FFF8F1; --ink:#261A10; --ink-2:#5C4A38;
+    --ink-3:#8F7A66; --line:#F1E2D2; --white:#FFFFFF;
+    --radius-lg:22px; --radius-md:16px; --radius-pill:999px;
+    --shadow-soft:0 10px 30px rgba(154,52,18,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- nav ---------- */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:inline-flex;align-items:center}
+  .logo img{height:clamp(30px,7vw,52px);width:auto;display:block}
+  @media(max-width:680px){.nav-links{gap:9px;font-size:12px;font-weight:600}.nav-links .btn{padding:7px 12px;font-size:12px}}
+  footer .logo img{height:46px;filter:brightness(1.15) contrast(1.05) drop-shadow(0 1px 1px rgba(0,0,0,.5))}
+  .nav-links{display:flex;align-items:center;gap:26px;font-size:14.5px;font-weight:500;color:var(--ink-2)}
+  .nav-links a{transition:color .18s}
+  .nav-links a:hover{color:var(--brand-700)}
+  .nav-links .drop{position:relative}
+  .drop-menu{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 44px rgba(124,45,18,.15);padding:7px;min-width:250px;display:none;z-index:60}
+  .drop-menu::before{content:'';position:absolute;top:-10px;left:0;right:0;height:10px}
+  .drop:hover .drop-menu,.drop:focus-within .drop-menu{display:block}
+  .drop-menu a{display:block;padding:9px 14px;border-radius:9px;font-size:14px;font-weight:500;color:var(--ink-2);white-space:nowrap;transition:background .15s}
+  .drop-menu a:hover{background:var(--brand-50);color:var(--brand-700)}
+  .drop .caret{display:inline-block;margin-left:5px;font-size:9px;vertical-align:2px}
+  .btn{padding:10px 22px;border-radius:var(--radius-pill);font-size:15px;font-weight:600;transition:all .18s;display:inline-block}
+  .btn-primary{background:var(--brand-700);color:#fff}
+  .btn-primary:hover{background:var(--brand-800);transform:translateY(-1px)}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--brand-800)}
+  .btn-ghost:hover{border-color:var(--brand-600);background:var(--mist)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:92px 0 30px;text-align:center;position:relative;overflow:hidden;background:var(--brand-900);color:#F9E9D8}
+  .hero-media{position:absolute;inset:0;z-index:0}
+  .hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-media .shade{position:absolute;inset:0;background:
+    linear-gradient(180deg,rgba(28,10,4,.35) 0%,rgba(28,10,4,.18) 40%,rgba(28,10,4,.32) 100%),
+    linear-gradient(90deg,rgba(28,10,4,.34) 0%,rgba(28,10,4,.28) 25%,rgba(28,10,4,.28) 75%,rgba(28,10,4,.38) 100%)}
+  .hero .wrap{position:relative;z-index:1}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,247,237,.16);color:#FFE8D2;font-size:13px;font-weight:600;padding:7px 16px;border-radius:var(--radius-pill);margin-bottom:26px;backdrop-filter:blur(6px)}
+  .badge i{width:7px;height:7px;border-radius:50%;background:var(--brand-600);display:inline-block}
+  .hero h1{font-size:clamp(40px,5.4vw,62px);line-height:1.1;font-weight:700;letter-spacing:-.025em;color:#fff;max-width:820px;margin:0 auto 26px;text-shadow:0 2px 18px rgba(20,6,2,.45)}
+  .hero h1 em{font-style:normal;color:#FFC886}
+  .hero p.lead{font-size:clamp(17px,2vw,20px);color:#FFF3E2;max-width:820px;margin:0 auto 14px;text-shadow:0 1px 12px rgba(20,6,2,.55),0 0 2px rgba(20,6,2,.35)}
+  .hero p.lead b{color:#FFE4C2;font-weight:700;text-shadow:0 1px 12px rgba(20,6,2,.6),0 0 2px rgba(20,6,2,.4)}
+  .metrics{display:flex;justify-content:center;gap:0;margin:60px 0 6px;flex-wrap:wrap}
+  .metric{padding:0 44px;border-left:1px solid rgba(255,255,255,.18)}
+  .metric:first-child{border-left:none}
+  .metric b{display:block;font-size:34px;font-weight:700;color:#FFDBAA;letter-spacing:-.02em}
+  .metric span{font-size:14px;color:rgba(249,233,216,.7)}
+  @media(max-width:820px){.metric{padding:12px 26px;border-left:none;border-top:1px solid var(--line)}.metric:first-child{border-top:none}}
+
+  /* ---------- sections ---------- */
+  section{padding:96px 0}
+  .alt{background:var(--mist)}
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-600);margin-bottom:16px}
+  .sec-head h2{font-size:clamp(28px,3.4vw,40px);font-weight:700;letter-spacing:-.02em;color:var(--brand-900);line-height:1.2;max-width:640px}
+  .sec-head p{margin-top:14px;font-size:17px;color:var(--ink-2);max-width:620px}
+  .sec-head.center{text-align:center}
+  .sec-head.center h2,.sec-head.center p{margin-left:auto;margin-right:auto}
+
+  /* ---------- about page prose ---------- */
+  .prose{max-width:820px;margin:0 auto}
+  .prose p{font-size:17.5px;color:var(--ink-2);margin-bottom:26px}
+  .prose p:last-child{margin-bottom:0}
+  .prose b{color:var(--brand-800);font-weight:650}
+  .prose h3{font-size:21px;color:var(--brand-900);font-weight:700;margin:44px 0 12px}
+
+  /* ---------- timeline ---------- */
+  .tl{max-width:760px;margin:52px auto 0;border-left:2px solid var(--brand-100);padding-left:34px}
+  .tl-item{position:relative;padding-bottom:30px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{content:"";position:absolute;left:-42px;top:5px;width:13px;height:13px;border-radius:50%;background:var(--brand-600);border:3px solid #fff;box-shadow:0 0 0 1px var(--brand-600)}
+  .tl b{display:block;font-size:15px;font-weight:700;color:var(--brand-700);letter-spacing:.03em;margin-bottom:2px}
+  .tl span{font-size:15.5px;color:var(--ink-2)}
+
+  /* ---------- why ---------- */
+  .why{background:var(--brand-900);color:#F9E9D8}
+  .why .eyebrow{color:var(--brand-100)}
+  .why .sec-head h2{color:#fff}
+  .why .sec-head p{color:rgba(255,240,224,.92)}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:52px}
+  .why-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius-md);padding:26px 24px}
+  .why-card h3{font-size:17px;font-weight:600;margin-bottom:8px;color:#fff}
+  .why-card p{font-size:14.5px;color:rgba(255,243,231,.95)}
+
+  /* ---------- visit strip ---------- */
+  .visit-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:42px}
+  .visit{margin:0;border-radius:var(--radius-md);overflow:hidden;background:var(--white);border:1px solid var(--line)}
+  .visit img{width:100%;height:240px;object-fit:cover;display:block;transition:transform .35s ease}
+  .visit:hover img{transform:scale(1.04)}
+  .visit figcaption{font-size:13.5px;color:var(--ink-3);padding:14px 18px 16px;line-height:1.45}
+  .visit figcaption b{display:block;color:var(--brand-800);font-size:14px;margin-bottom:2px}
+  @media(max-width:760px){.visit-strip{grid-template-columns:1fr}.visit img{height:260px}}
+
+  /* ---------- campus carousel (about) ---------- */
+  .carousel{position:relative;margin-top:46px}
+  .car-window{overflow:hidden;border-radius:var(--radius-lg)}
+  .car-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+  .car-slide{flex:0 0 100%;min-width:100%}
+  .car-slide img{width:100%;height:430px;object-fit:cover;display:block}
+  .car-caption{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 4px 0}
+  .car-caption b{font-size:15px;color:var(--brand-900)}
+  .car-caption span{font-size:13.5px;color:var(--ink-3)}
+  .car-btn{position:absolute;top:calc(50% - 64px);transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.65);background:rgba(255,255,255,.9);color:var(--brand-800);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.14);transition:all .18s;z-index:5}
+  .car-btn:hover{background:#fff;transform:translateY(-50%) scale(1.06)}
+  .car-btn.prev{left:-58px}
+  .car-btn.next{right:-58px}
+  .car-dots{display:flex;justify-content:center;gap:8px;margin-top:20px}
+  .car-dot{width:8px;height:8px;border-radius:50%;background:var(--brand-100);border:0;cursor:pointer;padding:0;transition:background .2s,width .2s}
+  .car-dot.on{background:var(--brand-600);width:24px;border-radius:99px}
+  @media(max-width:1120px){.car-btn.prev{left:6px}.car-btn.next{right:6px}}
+  @media(max-width:760px){.car-slide img{height:300px}}
+  @media(max-width:480px){.car-slide img{height:230px}}
+
+  /* ---------- offices ---------- */
+  .office-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px}
+  .office{position:relative;margin:0;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);background:var(--white)}
+  .office img{width:100%;height:250px;object-fit:cover;object-position:center 32%;display:block;transition:transform .4s ease}
+  .office:hover img{transform:scale(1.05)}
+  .office figcaption{padding:18px 20px 20px}
+  .office figcaption b{display:flex;align-items:center;gap:8px;font-size:17px;color:var(--brand-900);margin-bottom:6px}
+  .office figcaption b i{width:9px;height:9px;border-radius:50%;background:var(--brand-600);display:inline-block}
+  .office figcaption span{font-size:14px;color:var(--ink-2);line-height:1.5;display:block}
+  @media(max-width:860px){.office-grid{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}}
+  @media(max-width:760px){.office img{height:230px}}
+
+  /* ---------- cta ---------- */
+  .cta-in{background:var(--brand-600);border-radius:28px;padding:64px 48px;text-align:center;color:#fff;position:relative;overflow:hidden}
+  .cta-in h2{font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-.02em;margin-bottom:16px}
+  .cta-in p{font-size:17px;max-width:560px;margin:0 auto 32px;color:rgba(255,255,255,.92)}
+  .cta-mail{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:15px;color:rgba(255,255,255,.9)}
+  .cta-mail::before{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--brand-900);color:rgba(249,233,216,.7);padding:56px 0 40px;font-size:14px}
+  .foot-top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-brand{max-width:340px}
+  .foot-brand p{font-size:14px;color:rgba(249,233,216,.7);margin-top:12px}
+  .foot-col h4{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+  .foot-col a,.foot-col p{display:block;color:rgba(249,233,216,.65);margin-bottom:10px}
+  .foot-col a:hover{color:#fff}
+  .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;font-size:13px;color:rgba(249,233,216,.45)}
+  @media(max-width:860px){.nav-links{gap:14px;font-size:13.5px}.foot-col{margin-top:6px}}
+</style>
+</head>
+<body data-page-node-id="i1gZ45IQy1c7whLkBSk3WI">
+
+<header class="nav" data-page-node-id="3bCzTUmhv81HDwh758iDAq">
+  <div class="wrap nav-in" data-page-node-id="CTAsLQMd8T1PXHU6sENrHa">
+    <a class="logo" href="index.html" data-page-node-id="AF04Glg1r4iKq7DWkmW22T"><img src="assets/logo.png" alt="Zhongxiqiao Education · CWE · Chinese and Western Exchanges" data-page-node-id="vkZIPaxmAsHHc869AK1gPD" /></a>
+    <nav class="nav-links">
+      <div class="drop">
+        <a href="index.html#services">Services<span class="caret">▾</span></a>
+        <div class="drop-menu">
+          <a href="cooperative-education.html">Cooperative education</a>
+          <a href="tailor-made-master.html">Exclusive master&#39;s cohorts</a>
+          <a href="admissions.html">Admissions</a>
+          <a href="study-visits.html">Study visits</a>
+        </div>
+      </div>
+      <a href="partners.html">Partners</a>
+      <a href="about.html">About us</a>
+      <a class="btn btn-primary" href="contact.html">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<main data-page-node-id="ce3EBKTHxFqLLk2mrsef3k">
+
+  <section class="hero" data-page-node-id="Dk4ByASfw6FtgsPrAQQOAt">
+    <div class="hero-media">
+      <img src="assets/hero-about.jpg" alt="CWE team at a partner-university meeting" />
+      <div class="shade"></div>
+    </div>
+    <div class="wrap" data-page-node-id="PX8rWZ6N9Les5TkE0fbHoM">
+      <span class="badge" data-page-node-id="7s0hEpkp7FNeoIetvCuC3r"><i data-page-node-id="wPYoE4YVgHgtCKg3hPHnUO"></i>Est. 2011 · Beijing · Madrid</span>
+      <h1 data-page-node-id="VROGF18DC37mVWYnvhsq6A">About <em data-page-node-id="iSpET3g8ImyzEoGfbTQyBB">us</em></h1>
+      <p class="lead" data-page-node-id="yVeEX7XQmTbYFhLfp71HPm"><b data-page-node-id="UPl5kNTaiGOxBOEHW3abmR">Beijing Zhongxiqiao Education</b> (CWE — Chinese and Western Exchanges) is one of China's earliest consultancies focused exclusively on cooperation between China and Spain. Founded in Beijing in 2011, with an office in Madrid and a resident coordinator in Barcelona, we work on both sides of the relationship — with Spanish universities seeking qualified Chinese students, and with Chinese institutions building international programmes.</p>
+      <div class="metrics" data-page-node-id="XvNd7wYiZB6hqtiqfznpaG">
+        <div class="metric" data-page-node-id="v1T6M2TTW2pryntyCM4ko1"><b data-page-node-id="PTz0rJmQNuQo33nkifZCk5">≈10,000</b><span data-page-node-id="VsiOFwGG7bmaULJ1KMslDK">students guided to Spain since 2011</span></div>
+        <div class="metric" data-page-node-id="SBT4cndjUL1fku7VAxzFvm"><b data-page-node-id="a4CTGKhySTpBqxwGrsDuVt">99%</b><span data-page-node-id="l9oiPlVeamlom3RA3b0b9p">student visa success rate</span></div>
+        <div class="metric" data-page-node-id="z5VYgQp4VsvpdBKhDIBTIV"><b data-page-node-id="0aDgMsRvVKED2MTRYuoXyK">2011</b><span data-page-node-id="Lj5npeX3fBieTLysRq80xe">founded in Beijing</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" data-page-node-id="OoLloaGXmiHmd74sUiC6Bb">
+    <div class="wrap prose" data-page-node-id="ClACXhMaEBIjC6gW8KbGbV">
+      <div class="sec-head" data-page-node-id="pYj8fXT6u47CmbQQC6bnv3">
+        <p class="eyebrow" data-page-node-id="FEeGvv55TeF4CEO2o6Pi4i">What makes us different</p>
+        <h2 data-page-node-id="fkvc8FuLIijTVcpGDSMeva">Spain-focused by design</h2>
+      </div>
+      <h3 style="margin-top:34px" data-page-node-id="vzaQB1R5UWACCYr9gcZrnc">Deep focus on one country</h3>
+      <p data-page-node-id="gWONN8jatpxS49M2suAjIw">Unlike general study-abroad agencies, we concentrate on Spain alone. This focus lets us know the Spanish higher-education system deeply — and today we serve as the China-based admissions office for several leading Spanish universities, including the University of Salamanca and the Autonomous University of Barcelona. We also pioneered the CAU university-pathway programme, a preparatory course that takes Chinese students from school-level Spanish to university readiness.</p>
+
+      <h3 data-page-node-id="iKucNdcGpmUwEgiDLPRpcs">What we do</h3>
+      <p data-page-node-id="H35hN898LEBhwla1dAnVDm">Our four service lines cover cooperative education, exclusive master's cohorts, admissions at every level — from secondary school through to doctoral programmes — and study visits and short programmes. Across China, we promote these programmes through a nationwide network of partner schools and institutions.</p>
+
+      <h3 data-page-node-id="DvlqzBC4EOmhnmDEBE72bW">Numbers and people</h3>
+      <p data-page-node-id="tfC0CBAReADQnDf90uIS2G">Since 2011 we have helped <b data-page-node-id="FC2QcOTbdhEvc1Xx81ip0o">nearly 10,000 students</b> begin their studies in Spain, with a <b data-page-node-id="QBHyFzB315xobYjnMiba5G">99% visa success rate</b> across our applicants. Ninety percent of our team have studied abroad, and many of our leadership have lived and worked in Spain. We believe strong cooperation is built on trust, transparency and long-term commitment.</p>
+    </div>
+  </section>
+
+  <section data-page-node-id="IqUFrKeXRc3LJDB1vfVatc">
+    <div class="wrap" data-page-node-id="7dwqnxgLzHRTIrwHU60D2i">
+      <div class="sec-head center" data-page-node-id="f5UDC6FBhwJc37nOvO7zwu">
+        <p class="eyebrow" data-page-node-id="v51mzr4ECxYn2Z0S3yEYnA">Milestones</p>
+        <h2 data-page-node-id="tpE5MU7k8Do3AYfHVBaBss">Our journey since 2011</h2>
+      </div>
+      <div class="tl" data-page-node-id="RdH78boM7VA84382gOtBBM">
+        <div class="tl-item" data-page-node-id="FkoUqIu7sQQwApjGBUuH8c"><b data-page-node-id="0UGkh4OmQVtoV1EbsKJvFB">2015</b><span data-page-node-id="YbfBfIX2XFUo7BA94ano0G">Allied member of the national study-abroad service alliance</span></div>
+        <div class="tl-item" data-page-node-id="mdvrzTFBVGi1iKh2VTqdTM"><b data-page-node-id="jZSPTJFvw8VhM7skgXHJWE">2016</b><span data-page-node-id="7y7KylHlhcfRXEMADxCCOh">Appointed the sole strategic promotion partner in China of the Autonomous University of Barcelona</span></div>
+        <div class="tl-item" data-page-node-id="zMHJyiCBp6o6vXqGtll2Fo"><b data-page-node-id="W0H0M1gBd9YSR9cynBjak3">2017</b><span data-page-node-id="kaBmfHYvgDLtfecExk968y">Received by the Mayor of Madrid for our contribution to China–Spain education</span></div>
+        <div class="tl-item" data-page-node-id="JCQbOxw0zdgAFdVsWLPR3v"><b data-page-node-id="mVRGpO5rcy1tywLDrQ3ERN">2018</b><span data-page-node-id="ZKDxjT3vMAQYgoGZN3wZLO">Bright Elite Award; honoured as Bright Messenger by Guangming Daily's Study Abroad magazine</span></div>
+        <div class="tl-item" data-page-node-id="661IHCnVl7nKwQkUvFDN01"><b data-page-node-id="rBBocmYD5TT8rbMgmyH2lZ">2021</b><span data-page-node-id="mmT3YN3dtuVvnkCIf2QySr">ELE USAL Beijing language institute established with the University of Salamanca</span></div>
+        <div class="tl-item" data-page-node-id="emCB5bmB178BwqmaqT9XFG"><b data-page-node-id="KPubB4O0N4aSRvJ0SiMbCA">2025</b><span data-page-node-id="8cKzmITWU7Jmr9BQz45TIp">Appointed exclusive general agent in China for the University of Salamanca's international programmes</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head center">
+        <p class="eyebrow">On the ground</p>
+        <h2>Working in person, on both sides</h2>
+        <p>Cooperation built on relationships, not paperwork. A few of the visits from our work with Spanish partner universities.</p>
+      </div>
+      <div class="carousel" id="aboutCarousel">
+        <div class="car-window">
+          <div class="car-track" id="aboutCarTrack">
+            <figure class="car-slide"><img src="assets/usal-meeting.jpg" alt="Meeting with the University of Salamanca international office" loading="lazy" /><figcaption class="car-caption"><b>University of Salamanca</b><span>International office, Salamanca</span></figcaption></figure>
+            <figure class="car-slide"><img src="assets/cett-meeting.jpg" alt="CWE team at CETT, University of Barcelona" loading="lazy" /><figcaption class="car-caption"><b>CETT &middot; University of Barcelona</b><span>Tourism, hospitality &amp; gastronomy, Barcelona</span></figcaption></figure>
+            <figure class="car-slide"><img src="assets/ucjc-visit.jpg" alt="CWE team with the Universidad Camilo José Cela team on the Madrid campus" loading="lazy" /><figcaption class="car-caption"><b>UCJC</b><span>Campus visit, Madrid</span></figcaption></figure>
+          </div>
+        </div>
+        <button class="car-btn prev" id="aboutCarPrev" aria-label="Previous photo">&#8249;</button>
+        <button class="car-btn next" id="aboutCarNext" aria-label="Next photo">&#8250;</button>
+        <div class="car-dots" id="aboutCarDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="sec-head center">
+        <p class="eyebrow">Where we work</p>
+        <h2>Beijing &amp; Madrid — offices with reach across Spain</h2>
+        <p>Headquartered in Beijing, with our Madrid office and resident staff across major Chinese cities, plus a resident coordinator in Barcelona — our team works where our partners and students need us.</p>
+      </div>
+      <div class="office-grid">
+        <figure class="office"><img src="assets/office-beijing.jpg" alt="Beijing Central Business District skyline" loading="lazy" /><figcaption><b><i></i>Beijing</b><span>Head office · in the Central Business District, near the CCTV headquarters</span></figcaption></figure>
+        <figure class="office"><img src="assets/office-madrid.jpg" alt="Gran Vía in Madrid near Callao, with the Metrópolis building" loading="lazy" /><figcaption><b><i></i>Madrid</b><span>European office · by the Callao area on Gran Vía</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" data-page-node-id="nA74yoT68jAG6EHpaANfFE">
+    <div class="wrap" data-page-node-id="klwTiDJ5hXMokkywPbsl3J">
+      <div class="sec-head center" data-page-node-id="w7ImzSP5AyVNERA28q1LNI">
+        <p class="eyebrow" data-page-node-id="msV364rTL4DLZydGfOWT4u">Why partner with us</p>
+        <h2 data-page-node-id="gLmyBSAQ4yKEtD4jH3NTM6">Built for institutions that want it done right</h2>
+        <p data-page-node-id="LhGxDQBySEOT1SwoVcKJLJ">Universities work with us because we remove the distance — operationally, culturally and linguistically.</p>
+      </div>
+      <div class="why-grid" data-page-node-id="BT7EWKNeHOe206uLVFYuqa">
+        <div class="why-card" data-page-node-id="4bo4ZZGsDs1UipYLRKTTAP">
+          <h3 data-page-node-id="J6T4zSiLLdkBNGfGQAycEB">Focused on Spain alone</h3>
+          <p data-page-node-id="ZskbcEBVc2v9yUdwzh4D3V">One education system, one market, deep relationships. Our team members have studied and worked in Spain.</p>
+        </div>
+        <div class="why-card" data-page-node-id="wuLBs5LwVB3Z6QTAjiLcr2">
+          <h3 data-page-node-id="cmuf3EoBtsXMPVkdtBZtMJ">Your team on both sides</h3>
+          <p data-page-node-id="y053HLBJmV6Sh7s0KohIdw">Beijing head office and Madrid office, with resident staff in major Chinese cities and a resident coordinator in Barcelona — coordination without time-zone or language gaps.</p>
+        </div>
+        <div class="why-card" data-page-node-id="OtZAdAqJ44OWrDwCw278uv">
+          <h3 data-page-node-id="OsN1LHANLVPKxU06S1u2Is">A track record you can check</h3>
+          <p data-page-node-id="mCvmuU1f3dQB7Zum0kUPX7">99% visa success, nearly 10,000 students guided — a track record you are welcome to verify directly.</p>
+        </div>
+        <div class="why-card" data-page-node-id="RFNVsH2GvtuoyxzBphbBi3">
+          <h3 data-page-node-id="B7FOJkf14uzcxawBgrCsYX">Education people, not salespeople</h3>
+          <p data-page-node-id="dDTGixacDNzLEyqHT8RwLE">We protect your reputation as carefully as our own — students are supported from first enquiry to graduation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer data-page-node-id="HxpYJFvtj0XNgDu3ohoDtg">
+  <div class="wrap" data-page-node-id="vthmvnwlkq5U4EJSSQbbzj">
+    <div class="foot-top" data-page-node-id="WRSSPHKqg8H2ho2iPMA76J">
+      <div class="foot-brand" data-page-node-id="XDucnNoSdkoeXV1sjac9xR">
+        <a class="logo" href="index.html" data-page-node-id="wY0ODGTMYHosmXj8tRCEA1"><img src="assets/logo.png" alt="Zhongxiqiao Education · CWE · Chinese and Western Exchanges" data-page-node-id="CR4MFEO6lzYY5xnQgi4ATm" /></a>
+        <p data-page-node-id="1ar2JGw4y6AqSs7JxVcM2A">Education cooperation between China and Spain. Beijing · Madrid.</p>
+      </div>
+      <div class="foot-col" data-page-node-id="YoqzPrCJY5Nzi4CMhaWx4b">
+        <h4 data-page-node-id="xThYDgveaT23q7gneTLXDu">Explore</h4>
+        <a href="about.html" data-page-node-id="yxGbWRcadNkeA2udKMbFx6">About us</a>
+        <a href="partners.html" data-page-node-id="Nz65PscYGkt35UispXfUfa">Partners</a>
+        <a href="cooperative-education.html" data-page-node-id="bpyApiRoibwlvspPay4CaW">Cooperative education</a>
+        <a href="tailor-made-master.html" data-page-node-id="9WkgB45F1d4TsOOy9oCY94">Master's cohorts</a>
+        <a href="admissions.html" data-page-node-id="Gz6ks2Eyvetbuc45rhQSTZ">Admissions</a>
+        <a href="study-visits.html" data-page-node-id="dp3S5Lh2D9yhzpLvSFZfz2">Study visits</a>
+      </div>
+      <div class="foot-col" data-page-node-id="yfBE151Pvyoo3Iopwt0KFi">
+        <h4 data-page-node-id="QpTpRmWuI5uRBDHAwUE3em">Contact</h4>
+        <a href="mailto:kevinzhou@estudiaspain.com" data-page-node-id="EJbfYEGO04XrV1qn3mL4vC">kevinzhou@estudiaspain.com</a>
+        <p data-page-node-id="UnHBnNk8sIsA4SnZRS49Wr">Beijing · Madrid</p>
+        <p data-page-node-id="DLON7Hvpb1u4gD8kg4dmWZ">WeChat / WhatsApp available</p>
+      </div>
+    </div>
+    <div class="foot-bottom" data-page-node-id="lyfqxBBo7L5MTAroI9ekiu">
+      <span data-page-node-id="dURG3MGOpjyTEzNIiWDoc0">© 2026 Beijing Zhongxiqiao Education Consulting</span>
+      <span data-page-node-id="EI4fwa22oGOOk6s5qxhKw0">EN · ES — full Spanish version coming</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var track=document.getElementById('aboutCarTrack');
+  if(!track) return;
+  var slides=track.children, i=0, n=slides.length, dotsWrap=document.getElementById('aboutCarDots');
+  var dots=[], timer=null;
+  for(var k=0;k<n;k++){var d=document.createElement('button');d.className='car-dot';d.setAttribute('aria-label','Go to photo '+(k+1));(function(kk){d.addEventListener('click',function(){go(kk);restart();});})(k);dotsWrap.appendChild(d);dots.push(d);}
+  function go(idx){i=(idx+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';for(var k=0;k<n;k++)dots[k].className='car-dot'+(k===i?' on':'');}
+  function next(){go(i+1);} function prev(){go(i-1);}
+  document.getElementById('aboutCarNext').addEventListener('click',function(){next();restart();});
+  document.getElementById('aboutCarPrev').addEventListener('click',function(){prev();restart();});
+  function restart(){if(timer)clearInterval(timer);timer=setInterval(next,5000);}
+  var car=document.querySelector('#aboutCarousel');
+  car.addEventListener('mouseenter',function(){if(timer)clearInterval(timer);});
+  car.addEventListener('mouseleave',restart);
+  var sx=0;
+  document.querySelector('#aboutCarousel .car-window').addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  document.querySelector('#aboutCarousel .car-window').addEventListener('touchend',function(e){var ex=e.changedTouches[0].clientX;var dx=ex-sx;if(Math.abs(dx)>40){dx<0?next():prev();restart();}},{passive:true});
+  go(0); restart();
+})();
+</script>
+
+</body>
+</html>
