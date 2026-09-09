@@ -77,7 +77,7 @@
     .metric{padding:12px 26px;border-left:none;border-top:1px solid rgba(255,255,255,.26)}
     .metric:first-child{border-top:none}.metric:last-child{margin-bottom:0}
   }
-  @media(max-width:560px){.hero-media .side.r{display:none}.hero-media .side.l{left:0;width:100%}}
+  @media(max-width:560px){.hero-media .side.r{display:none}.hero-media .side.l{left:0;width:100%;background-position:center;-webkit-mask-image:none;mask-image:none}}
 
   /* ---------- sections ---------- */
   section{padding:96px 0}
@@ -141,6 +141,55 @@
   .foot-col a:hover{color:#fff}
   .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;font-size:13px;color:rgba(249,233,216,.45)}
   @media(max-width:860px){.nav-links{gap:14px;font-size:13.5px}.foot-col{margin-top:6px}}
+
+  /* ===== mobile: hamburger nav (round-2) ===== */
+  .nav-toggle-input{display:none}
+  .nav-toggle{display:none}
+  @media(max-width:860px){
+    .nav-in{height:60px}
+    .nav-toggle{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;margin-left:auto;cursor:pointer;z-index:70}
+    .nav-toggle span{display:block;width:22px;height:2px;border-radius:2px;background:var(--brand-900);transition:transform .25s,opacity .2s}
+    .nav-toggle-input:checked ~ .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle-input:checked ~ .nav-toggle span:nth-child(2){opacity:0}
+    .nav-toggle-input:checked ~ .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .nav-links{position:absolute;top:100%;left:0;right:0;z-index:65;display:flex;flex-direction:column;align-items:stretch;gap:0;margin:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 30px 50px rgba(124,45,18,.16);padding:6px 28px 26px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .22s,transform .22s,visibility .22s;max-height:calc(100vh - 60px);overflow-y:auto}
+    .nav-toggle-input:checked ~ .nav-links{opacity:1;visibility:visible;transform:none}
+    .nav-links a{display:block;padding:13px 2px;font-size:15px;font-weight:600;border-bottom:1px solid var(--line);color:var(--brand-900)}
+    .nav-links a:hover{color:var(--brand-600)}
+    .nav-links .drop{width:100%}
+    .drop>a{padding:13px 2px}
+    .drop-menu{position:static;display:block;transform:none;background:transparent;border:none;box-shadow:none;border-radius:0;padding:0 0 4px 16px;min-width:0}
+    .drop-menu::before{display:none}
+    .drop-menu a{border-bottom:none;padding:9px 2px;font-size:14px;font-weight:500;color:var(--ink-2)}
+    .nav-links .btn{margin:18px 0 0;text-align:center;padding:12px}
+    .nav-links .btn{border:none}
+  }
+  /* ===== mobile: footer stacking (round-2) ===== */
+  /* ===== mobile-first hero + metrics (round-4) ===== */
+  .hero h1{font-size:16px;line-height:1.32;width:100%;margin:0 0 12px;letter-spacing:0;padding:0 14px;box-sizing:border-box}
+  .hero p.lead{font-size:14.5px;max-width:100%;margin:0 auto 24px;padding:0 6px;overflow-wrap:break-word;word-break:break-word}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:10px;padding:0 14px}
+  .hero-actions .btn{padding:13px 18px;font-size:14px}
+  .metrics{flex-direction:column;align-items:center;gap:0;margin:46px auto 0;width:100%;max-width:480px;flex-wrap:nowrap}
+  .metric{padding:16px 0;border-left:none;text-align:center}
+  .metric:not(:first-child){border-top:1px solid rgba(255,255,255,.22)}
+  @media(min-width:561px){
+    .hero h1{font-size:clamp(40px,5.6vw,62px);line-height:1.12;max-width:860px;margin:0 auto 24px;letter-spacing:-.025em}
+    .hero p.lead{font-size:clamp(17px,2vw,20px);max-width:680px;margin:0 auto 34px;padding:0}
+    .hero-actions{flex-direction:row;align-items:center;padding:0}
+    .hero-actions .btn{padding:10px 22px;font-size:15px}
+    .metrics{flex-direction:row;justify-content:center;gap:0;margin:88px auto 0;max-width:none;width:auto;flex-wrap:wrap}
+    .metric{padding:0 44px;text-align:left;border-top:none}
+    .metric:first-child{border-left:none}
+    .metric:not(:first-child){border-left:1px solid rgba(255,255,255,.3);border-top:none}
+  }
+  @media(max-width:760px){
+    .foot-top{gap:22px 16px}
+    .foot-brand{width:100%;max-width:none;margin-bottom:4px}
+    .foot-col{width:calc(50% - 8px)}
+    .foot-bottom{flex-direction:column;align-items:center;gap:8px;text-align:center}
+    footer{padding:44px 0 32px}
+  }
 </style>
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -161,6 +210,8 @@
 <header class="nav" data-page-node-id="F2VrV8F80ksu7YJm9hfivO">
   <div class="wrap nav-in" data-page-node-id="p7i2EDp1jxeQdHT8isgDVU">
     <a class="logo" href="index.html"><img src="assets/logo.png" alt="Zhongxiqiao Education · CWE · Chinese and Western Exchanges" /></a>
+    <input type="checkbox" id="navToggle" class="nav-toggle-input" />
+    <label for="navToggle" class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></label>
     <nav class="nav-links">
       <div class="drop">
         <a href="index.html#services">Services<span class="caret">▾</span></a>
@@ -183,7 +234,6 @@
   <section class="hero" data-page-node-id="i32lxkLVZ2cYQk2K0lKDQs">
     <div class="hero-media"><span class="side l"></span><span class="side r"></span><span class="shade"></span></div>
     <div class="wrap" data-page-node-id="r3RJ5eGpQ4wHqE0fO2MHFJ">
-      <span class="badge" data-page-node-id="VsHwhRoNwtbejAjcL9ilsM"><i data-page-node-id="u5tEXwWYeOuFG5zyIiEEV5"></i>Beijing Zhongxiqiao Education Consulting</span>
       <h1 data-page-node-id="Cr1EwdqbI75y855nutYLWF">Bridging <em data-page-node-id="7kIctFZUmE9YTvtZDFzydx">China-Europe Academic Partnerships</em></h1>
       <p class="lead" data-page-node-id="1DkpnkE2B4u4CwOFoOcldV">We help overseas partner universities expand their cooperation with China — connecting them with Chinese institutions and building two-way channels for academic exchanges and research collaboration.</p>
       <div class="hero-actions" data-page-node-id="WH9JN4zKbt2M1XrQhWFoeD">
@@ -201,7 +251,7 @@
   <section id="about" class="alt" data-page-node-id="eYaJCbw74efbtW9Zqjo3Ta">
     <div class="wrap sec-head center" data-page-node-id="IkCQLcCRy5FEBF5xmlvxkH">
       <p class="eyebrow" data-page-node-id="usezYzTSx2wFJDAwfGZJ5A">Who we are</p>
-      <h2 data-page-node-id="QUD7x2gWr9fkmMFH8V3Q0W">A China-based team focused on Spanish higher education</h2>
+      <h2 data-page-node-id="QUD7x2gWr9fkmMFH8V3Q0W">A China-based team focused on higher education abroad</h2>
       <p data-page-node-id="OODj5wAB2cnakOVC3P1Bak">Founded in Beijing in 2011, <strong>Beijing Zhongxiqiao Education Consulting</strong> is one of China's earliest consultancies focused on Spain and other European countries. Headquartered in Beijing, with our Madrid office and resident staff across major Chinese cities, plus a resident coordinator in Barcelona — we work on both sides of the bridge: helping universities abroad enter the Chinese market and connect with Chinese institutions, while opening more study opportunities and pathways for Chinese students overseas.</p>
     </div>
   </section>
@@ -254,7 +304,6 @@
             <li data-page-node-id="lzcee9IXgETsRVTpkOnC2G">Inter-university academic visits</li>
             <li data-page-node-id="4PcTg1vyDVM3p9kiYFD4OY">Research collaboration</li>
           </ul>
-          <a class="svc-more" href="cooperative-education.html" data-page-node-id="kFKwa3H8QVvLCWarAGbRq0">See how we work</a>
         </div>
         <div class="svc-card" data-page-node-id="Uzuutd5Ixyrx99rNFKnR9y">
           <div class="svc-num" data-page-node-id="0GZSxNi4ZehEsNOoeSyeei">02</div>
@@ -265,7 +314,6 @@
             <li data-page-node-id="2JAbHTfhQtVhUX6HOpQ1jS">Taught in English or Spanish, depending on the programme</li>
             <li data-page-node-id="kIxpeCwJX8BL5ZJiacdAjJ">Dedicated recruitment &amp; in-class support in Chinese</li>
           </ul>
-          <a class="svc-more" href="tailor-made-master.html" data-page-node-id="glgmAoww8UwP3Dftn5LtvB">See how we work</a>
         </div>
         <div class="svc-card" data-page-node-id="0aPglrIPhAkjOLZ8a1QXOb">
           <div class="svc-num" data-page-node-id="IhYdYOEhaSXauMEg1RdWb6">03</div>
@@ -276,7 +324,6 @@
             <li data-page-node-id="Audcs7CsijgWCoflbQFtHs">Language preparatory pathway &amp; visa guidance</li>
             <li data-page-node-id="cDokHwV0D7QiYnHWPooQgW">In-country reception &amp; living support</li>
           </ul>
-          <a class="svc-more" href="admissions.html" data-page-node-id="O359Soe10pRFEo0Dxc3NCG">See how we work</a>
         </div>
         <div class="svc-card" data-page-node-id="KTuBuUhhUfYosBUa1gS80n">
           <div class="svc-num" data-page-node-id="LqjUiBSo44e7TPLcAKsab9">04</div>
@@ -287,7 +334,6 @@
             <li data-page-node-id="3XstvKZWDnsABBsf4X6KMu">Spanish language &amp; culture camps</li>
             <li data-page-node-id="HqpNYAUhJgvWh9z7xNSkla">Bilateral school &amp; faculty delegations</li>
           </ul>
-          <a class="svc-more" href="study-visits.html" data-page-node-id="HKqyqumoHytHidDcugwWGR">See how we work</a>
         </div>
       </div>
     </div>
@@ -298,7 +344,7 @@
       <div class="sec-head" data-page-node-id="hGUBVWSMYBH0UfSF7CmYfE">
         <p class="eyebrow" data-page-node-id="Rr4fjaUV3vzDbGv2ixnwnS">Why partner with us</p>
         <h2 data-page-node-id="DsbRJyIfAeFfpbyofvgkM0">Experts in both Chinese and European education</h2>
-        <p data-page-node-id="ZhOR0uTjYPqQhO1zKJ8dNN">We focus on one country and know its system deeply, so universities get a partner who delivers — not a middleman who spreads thin.</p>
+        <p data-page-node-id="ZhOR0uTjYPqQhO1zKJ8dNN">We focus on the European market and know it deeply, so universities get a partner who delivers — not a middleman who spreads thin.</p>
       </div>
       <div class="why-grid" data-page-node-id="uRP4EOCtoigO4JSKpF2HSh">
         <div class="why-card" data-page-node-id="Nqn5iZ7zveRMH9N1A9Lw6l">
