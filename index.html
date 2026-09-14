@@ -197,7 +197,8 @@
   .news-media .news-tag{position:absolute;top:16px;left:16px;background:var(--brand-600);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:var(--radius-pill)}
   .news-body h3{font-size:clamp(20px,2.4vw,26px);line-height:1.28;color:var(--brand-900);margin:10px 0 12px;letter-spacing:-.01em}
   .news-body .news-date{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-600)}
-  .news-body p{font-size:15.5px;line-height:1.72;color:var(--ink-2);margin-bottom:18px}
+  .news-body p{font-size:15.5px;line-height:1.72;color:var(--ink-2);margin-bottom:14px}
+  .news-body p:last-of-type{margin-bottom:20px}
   .news-body .news-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--brand-700);font-size:15px}
   .news-body .news-link:hover{gap:12px}
   @media(max-width:900px){
@@ -205,6 +206,21 @@
     .news-media{aspect-ratio:16/10}
     .news-body h3{font-size:20px}
   }
+  /* --- latest news: photo carousel --- */
+  .news-carousel{position:relative;padding-bottom:8px}
+  .news-car-window{overflow:hidden;border-radius:var(--radius-lg);box-shadow:var(--shadow-soft);background:var(--brand-50);aspect-ratio:4/3}
+  .news-car-track{display:flex;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+  .news-car-slide{flex:0 0 100%;min-width:100%;position:relative}
+  .news-car-slide img{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block}
+  .news-car-cap{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;background:linear-gradient(to top,rgba(0,0,0,.62),rgba(0,0,0,0));color:#fff;font-size:13px;line-height:1.45}
+  .news-car-btn{position:absolute;top:calc(50% - 22px);width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.88);color:var(--brand-800);font-size:17px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.16);transition:all .18s;z-index:5;padding:0}
+  .news-car-btn:hover{background:#fff;transform:scale(1.07)}
+  .news-car-btn.prev{left:10px}
+  .news-car-btn.next{right:10px}
+  .news-car-dots{position:absolute;left:0;right:0;bottom:-34px;display:flex;justify-content:center;gap:8px;z-index:6}
+  .news-car-dot{width:8px;height:8px;border-radius:50%;background:var(--brand-100);border:0;cursor:pointer;padding:0;transition:background .2s,width .2s}
+  .news-car-dot.on{background:var(--brand-600);width:24px;border-radius:99px}
+  @media(max-width:900px){.news-car-dots{bottom:-28px}}
 </style>
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -278,15 +294,26 @@
         <h2 data-page-node-id="nw1LatestNewsTitle01">Recent developments</h2>
       </div>
       <div class="news-grid" data-page-node-id="nw1LatestNewsGrid01">
-        <figure class="news-media" data-page-node-id="nw1LatestNewsMedia01">
-          <img src="assets/news-01.jpg" alt="Placeholder image for the latest CWE news item" loading="lazy" data-page-node-id="nw1LatestNewsImg001">
-          <span class="news-tag" data-page-node-id="nw1LatestNewsTag001">News</span>
-        </figure>
+        <div class="news-carousel" id="newsCarousel" data-page-node-id="nw1LatestNewsMedia01">
+          <div class="news-car-window">
+                                          <div class="news-car-track" id="newsCarTrack">
+            <figure class="news-car-slide" data-page-node-id="nw1LatestNewsSlide01"><img src="assets/news-01.jpg" alt="Inauguration ceremony of the USAL Joint Institute of Intelligent Engineering in Ningbo, June 2026" loading="lazy" data-page-node-id="nw1LatestNewsImg001"><figcaption class="news-car-cap" data-page-node-id="nw1LatestNewsCap01">Inauguration ceremony, Ningbo</figcaption></figure>
+            <figure class="news-car-slide" data-page-node-id="nw1LatestNewsSlide02"><img src="assets/news-02.jpg" alt="The Rector of the University of Salamanca meeting the Oli humanoid robot at the launch event in Ningbo" loading="lazy" data-page-node-id="nw1LatestNewsImg002"><figcaption class="news-car-cap" data-page-node-id="nw1LatestNewsCap02">USAL leadership meets Oli</figcaption></figure>
+            <figure class="news-car-slide" data-page-node-id="nw1LatestNewsSlide03"><img src="assets/news-03.jpg" alt="Both universities in front of the USAL–Ningbo Campus signboard" loading="lazy" data-page-node-id="nw1LatestNewsImg003"><figcaption class="news-car-cap" data-page-node-id="nw1LatestNewsCap03">The USAL–Ningbo Campus signboard</figcaption></figure>
+            <figure class="news-car-slide" data-page-node-id="nw1LatestNewsSlide04"><img src="assets/news-04.jpg" alt="Both universities with the Oli robot at the launch of the China–Spain AI education projects" loading="lazy" data-page-node-id="nw1LatestNewsImg004"><figcaption class="news-car-cap" data-page-node-id="nw1LatestNewsCap04">Both universities at the launch</figcaption></figure>
+          </div>
+          </div>
+          <button class="news-car-btn prev" id="newsCarPrev" aria-label="Previous photo">&#8249;</button>
+          <button class="news-car-btn next" id="newsCarNext" aria-label="Next photo">&#8250;</button>
+          <div class="news-car-dots" id="newsCarDots"></div>
+        </div>
         <div class="news-body" data-page-node-id="nw1LatestNewsBody01">
-          <span class="news-date" data-page-node-id="nw1LatestNewsDate001">Month 2026</span>
-          <h3 data-page-node-id="nw1LatestNewsH3001">News headline goes here</h3>
-          <p data-page-node-id="nw1LatestNewsP0001">A short summary of this update — two or three lines describing what happened, who it involves and why it matters to our partner universities. Replace this placeholder text with the real announcement.</p>
-          <a class="news-link" href="#" data-page-node-id="nw1LatestNewsLink01">Read more <span aria-hidden="true">→</span></a>
+          <span class="news-date" data-page-node-id="nw1LatestNewsDate001">June 2026</span>
+          <h3 data-page-node-id="nw1LatestNewsH3001">A first for post-pandemic Spain: the USAL Joint Institute of Intelligent Engineering opens in Ningbo</h3>
+                    <p data-page-node-id="nw1LatestNewsP0001">On 9 June 2026, the University of Salamanca (USAL) and Ningbo Polytechnic University inaugurated the Joint Institute of Intelligent Engineering — the first joint institute established in China by a Spanish university since the pandemic. Its three degree programmes cover applied artificial intelligence, chemical smart manufacturing and industrial robotics, taught with in-class support for Chinese students.</p>
+          <p data-page-node-id="nw1LatestNewsP0002">Both universities will share research resources in robotics, advanced manufacturing and AI, while students and staff exchange regularly through joint teaching and industry projects — opening new pathways for students on both sides.</p>
+          <p data-page-node-id="nw1LatestNewsP0003">For CWE, this partnership began long before the ceremony — with an introduction between two universities, a design shaped over many conversations, and the negotiations that followed, all the way to the institute that now stands in Ningbo.</p>
+          <a class="news-link" href="https://h.xinhuaxmt.com/vh512/share/13143093?docid=13143093&newstype=1001&d=1352702&channel=weixin&time=1781096307381" target="_blank" rel="noopener" data-page-node-id="nw1LatestNewsLink01">Read the official release <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
@@ -435,5 +462,27 @@
   </div>
 </footer>
 
+
+<script>
+(function(){
+  var track=document.getElementById('newsCarTrack');
+  if(!track) return;
+  var slides=track.children, i=0, n=slides.length, dotsWrap=document.getElementById('newsCarDots');
+  var dots=[], timer=null;
+  for(var k=0;k<n;k++){var d=document.createElement('button');d.className='news-car-dot';d.setAttribute('aria-label','Go to photo '+(k+1));(function(kk){d.addEventListener('click',function(){go(kk);restart();});})(k);dotsWrap.appendChild(d);dots.push(d);}
+  function go(idx){i=(idx+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';for(var k=0;k<n;k++)dots[k].className='news-car-dot'+(k===i?' on':'');}
+  function next(){go(i+1);} function prev(){go(i-1);}
+  document.getElementById('newsCarNext').addEventListener('click',function(){next();restart();});
+  document.getElementById('newsCarPrev').addEventListener('click',function(){prev();restart();});
+  function restart(){if(timer)clearInterval(timer);timer=setInterval(next,6000);}
+  var car=document.getElementById('newsCarousel');
+  car.addEventListener('mouseenter',function(){if(timer)clearInterval(timer);});
+  car.addEventListener('mouseleave',restart);
+  var sx=0, win=car.querySelector('.news-car-window');
+  win.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  win.addEventListener('touchend',function(e){var ex=e.changedTouches[0].clientX;var dx=ex-sx;if(Math.abs(dx)>40){dx<0?next():prev();restart();}},{passive:true});
+  go(0); restart();
+})();
+</script>
 </body>
 </html>
