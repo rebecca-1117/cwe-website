@@ -113,7 +113,7 @@
   .car-dot{width:8px;height:8px;border-radius:50%;background:var(--brand-100);border:0;cursor:pointer;padding:0;transition:background .2s,width .2s}
   .car-dot.on{background:var(--brand-600);width:24px;border-radius:99px}
   @media(max-width:1120px){.car-btn.prev{left:6px}.car-btn.next{right:6px}}
-  @media(max-width:760px){.car-slide img{height:300px}}
+  @media(max-width:760px){.car-slide img{height:300px}.car-caption{flex-direction:column;gap:3px;padding:14px 2px 0}.car-caption b{font-size:14px}.car-caption span{font-size:12.5px;line-height:1.4}}
   @media(max-width:480px){.car-slide img{height:230px}}
 
   /* ---------- cta ---------- */
@@ -360,7 +360,14 @@
       <div class="carousel" id="studentCarousel">
         <div class="car-window">
           <div class="car-track" id="studentCarTrack">
-            <!-- 占位：等用户提供学生合影后替换 -->
+            <figure class="car-slide"><img src="assets/stu-ucjc-graduation.jpg" alt="Chinese graduates with UCJC faculty outside the Universidad Camilo José Cela campus in Madrid" loading="lazy" /><figcaption class="car-caption"><b>Universidad Camilo José Cela</b><span>Master's cohort graduation, Madrid</span></figcaption></figure>
+            <figure class="car-slide"><img src="assets/stu-eae-graduation.jpg" alt="Chinese students at the EAE Business School graduation ceremony" loading="lazy" /><figcaption class="car-caption"><b>EAE Business School</b><span>Graduation ceremony</span></figcaption></figure>
+            <figure class="car-slide"><img src="assets/stu-uab-cau.jpg" alt="CAU preparatory pathway cohort with UAB staff on the university staircase" loading="lazy" /><figcaption class="car-caption"><b>Universitat Autònoma de Barcelona</b><span>CAU preparatory cohort, Barcelona</span></figcaption></figure>
+            <figure class="car-slide"><img src="assets/stu-usal-classroom.jpg" alt="Chinese students in a historic lecture hall at the University of Salamanca" loading="lazy" /><figcaption class="car-caption"><b>University of Salamanca</b><span>Students on campus, Salamanca</span></figcaption></figure>
+            <figure class="car-slide"><img src="assets/stu-ucjc-faculty.jpg" alt="UCJC academic ceremony with faculty in ceremonial robes" loading="lazy" /><figcaption class="car-caption"><b>Universidad Camilo José Cela</b><span>Academic year opening ceremony, Madrid</span></figcaption></figure>
+            <figure class="car-slide"><img src="assets/stu-ucjc-ceremony.jpg" alt="Students at the UCJC academic year opening ceremony" loading="lazy" /><figcaption class="car-caption"><b>Universidad Camilo José Cela</b><span>Chinese students at the opening ceremony, Madrid</span></figcaption></figure>
+            <figure class="car-slide"><img src="assets/stu-fabrica-visit.jpg" alt="Chinese student group during a company visit in Spain" loading="lazy" /><figcaption class="car-caption"><b>Company visits</b><span>Student group on an industry visit</span></figcaption></figure>
+            <figure class="car-slide"><img src="assets/stu-sagrada-familia.jpg" alt="Chinese student group in front of the Sagrada Família in Barcelona" loading="lazy" /><figcaption class="car-caption"><b>Barcelona</b><span>Student group, Sagrada Família</span></figcaption></figure>
           </div>
         </div>
         <button class="car-btn prev" id="studentCarPrev" aria-label="Previous photo">‹</button>
