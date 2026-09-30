@@ -101,20 +101,19 @@
   .car-window{overflow:hidden;border-radius:var(--radius-lg)}
   .car-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
   .car-slide{flex:0 0 100%;min-width:100%}
-  .car-slide img{width:100%;height:430px;object-fit:cover;display:block}
+  .car-slide img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block}
   .car-caption{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 4px 0}
   .car-caption b{font-size:15px;color:var(--brand-900)}
   .car-caption span{font-size:13.5px;color:var(--ink-3)}
-  .car-btn{position:absolute;top:calc(50% - 64px);transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.65);background:rgba(255,255,255,.9);color:var(--brand-800);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.14);transition:all .18s;z-index:5}
-  .car-btn:hover{background:#fff;transform:translateY(-50%) scale(1.06)}
+  .car-btn{position:absolute;top:0;bottom:64px;margin:auto 0;height:46px;width:46px;border-radius:50%;border:1px solid rgba(255,255,255,.65);background:rgba(255,255,255,.9);color:var(--brand-800);font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.14);transition:all .18s;z-index:5}
+  .car-btn:hover{background:#fff;transform:scale(1.06)}
   .car-btn.prev{left:-58px}
   .car-btn.next{right:-58px}
   .car-dots{display:flex;justify-content:center;gap:8px;margin-top:20px}
   .car-dot{width:8px;height:8px;border-radius:50%;background:var(--brand-100);border:0;cursor:pointer;padding:0;transition:background .2s,width .2s}
   .car-dot.on{background:var(--brand-600);width:24px;border-radius:99px}
   @media(max-width:1120px){.car-btn.prev{left:6px}.car-btn.next{right:6px}}
-  @media(max-width:760px){.car-slide img{height:300px}.car-caption{flex-direction:column;gap:3px;padding:14px 2px 0}.car-caption b{font-size:14px}.car-caption span{font-size:12.5px;line-height:1.4}}
-  @media(max-width:480px){.car-slide img{height:230px}}
+  @media(max-width:760px){.car-caption{flex-direction:column;gap:3px;padding:14px 2px 0}.car-caption b{font-size:14px}.car-caption span{font-size:12.5px;line-height:1.4}}
 
   /* ---------- cta ---------- */
   .cta-in{background:var(--brand-600);border-radius:28px;padding:64px 48px;text-align:center;color:#fff;position:relative;overflow:hidden}
