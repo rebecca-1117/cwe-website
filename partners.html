@@ -100,8 +100,8 @@
   .carousel{position:relative;margin-top:46px}
   .car-window{overflow:hidden;border-radius:var(--radius-lg)}
   .car-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
-  .car-slide{flex:0 0 100%;min-width:100%}
-  .car-slide img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block}
+  .car-slide{flex:0 0 100%;min-width:100%;overflow:hidden}
+  .car-slide img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center}
   .car-caption{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 4px 0}
   .car-caption b{font-size:15px;color:var(--brand-900)}
   .car-caption span{font-size:13.5px;color:var(--ink-3)}
@@ -413,24 +413,35 @@
   function initCarousel(rootId,trackId,prevId,nextId,dotsId){
     var root=document.getElementById(rootId), track=document.getElementById(trackId);
     if(!root||!track) return;
-    var n=track.children.length;
+    var win=root.querySelector('.car-window');
+    if(!win) return;
+    var slides=track.children, n=slides.length;
     var dotsWrap=document.getElementById(dotsId);
     if(n<2){if(dotsWrap)dotsWrap.style.display='none';return;}
-    var i=0,dots=[],timer=null;
+    var i=0,dots=[],timer=null,W=0;
+    // 关键：用像素宽度锁定轨道，避免百分比/子像素误差导致下一张图露边
+    function layout(){
+      W=win.clientWidth;
+      track.style.width=(W*n)+'px';
+      for(var k=0;k<n;k++){slides[k].style.width=W+'px';slides[k].style.flex='0 0 '+W+'px';slides[k].style.minWidth=W+'px';}
+      move();
+    }
+    function move(){track.style.transform='translateX(-'+(i*W)+'px)';}
     for(var k=0;k<n;k++){var d=document.createElement('button');d.className='car-dot';d.setAttribute('aria-label','Go to photo '+(k+1));(function(kk){d.addEventListener('click',function(){go(kk);restart();});})(k);dotsWrap.appendChild(d);dots.push(d);}
-    function go(idx){i=(idx+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';for(var k=0;k<n;k++)dots[k].className='car-dot'+(k===i?' on':'');}
+    function go(idx){i=(idx+n)%n;move();for(var k=0;k<n;k++)dots[k].className='car-dot'+(k===i?' on':'');}
     function next(){go(i+1);} function prev(){go(i-1);}
     document.getElementById(nextId).addEventListener('click',function(){next();restart();});
     document.getElementById(prevId).addEventListener('click',function(){prev();restart();});
     function restart(){if(timer)clearInterval(timer);timer=setInterval(next,5000);}
     root.addEventListener('mouseenter',function(){if(timer)clearInterval(timer);});
     root.addEventListener('mouseleave',restart);
-    var win=root.querySelector('.car-window'),sx=0,ex=0;
-    if(win){
-      win.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
-      win.addEventListener('touchend',function(e){ex=e.changedTouches[0].clientX;var dx=ex-sx;if(Math.abs(dx)>40){dx<0?next():prev();restart();}},{passive:true});
-    }
-    go(0); restart();
+    var sx=0,ex=0;
+    win.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+    win.addEventListener('touchend',function(e){ex=e.changedTouches[0].clientX;var dx=ex-sx;if(Math.abs(dx)>40){dx<0?next():prev();restart();}},{passive:true});
+    window.addEventListener('resize',layout);
+    // 图片加载完成后重新量一次（字体/滚动条变化会改变窗口宽度）
+    window.addEventListener('load',layout);
+    layout(); go(0); restart();
   }
   initCarousel('campusCarousel','carTrack','carPrev','carNext','carDots');
   initCarousel('studentCarousel','studentCarTrack','studentCarPrev','studentCarNext','studentCarDots');

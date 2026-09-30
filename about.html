@@ -111,8 +111,8 @@
   .carousel{position:relative;margin-top:46px}
   .car-window{overflow:hidden;border-radius:var(--radius-lg)}
   .car-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
-  .car-slide{flex:0 0 100%;min-width:100%}
-  .car-slide img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block}
+  .car-slide{flex:0 0 100%;min-width:100%;overflow:hidden}
+  .car-slide img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:center}
   .car-caption{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 4px 0}
   .car-caption b{font-size:15px;color:var(--brand-900)}
   .car-caption span{font-size:13.5px;color:var(--ink-3)}
@@ -311,7 +311,6 @@
           <div class="car-track" id="aboutCarTrack">
             <figure class="car-slide"><img src="assets/usal-ningbo-inauguration.jpg" alt="Inauguration of the NBPU–USAL Joint Institute of Intelligent Engineering" loading="lazy" /><figcaption class="car-caption"><b>NBPU · University of Salamanca</b><span>Inauguration of the Joint Institute of Intelligent Engineering, Ningbo</span></figcaption></figure>
             <figure class="car-slide"><img src="assets/usal-meeting.jpg" alt="Meeting with the University of Salamanca international office" loading="lazy" /><figcaption class="car-caption"><b>University of Salamanca</b><span>International office, Salamanca</span></figcaption></figure>
-            <figure class="car-slide"><img src="assets/cett-meeting.jpg" alt="CWE team at CETT, University of Barcelona" loading="lazy" /><figcaption class="car-caption"><b>CETT &middot; University of Barcelona</b><span>Tourism, hospitality &amp; gastronomy, Barcelona</span></figcaption></figure>
             <figure class="car-slide"><img src="assets/ucjc-visit.jpg" alt="CWE team with the Universidad Camilo José Cela team on the Madrid campus" loading="lazy" /><figcaption class="car-caption"><b>Universidad Camilo José Cela</b><span>Chinese university delegation visit, Madrid</span></figcaption></figure>
           </div>
         </div>
@@ -400,21 +399,33 @@
 (function(){
   var track=document.getElementById('aboutCarTrack');
   if(!track) return;
+  var car=document.querySelector('#aboutCarousel');
+  var win=car.querySelector('.car-window');
+  if(!win) return;
   var slides=track.children, i=0, n=slides.length, dotsWrap=document.getElementById('aboutCarDots');
-  var dots=[], timer=null;
+  var dots=[], timer=null, W=0;
+  // 关键：用像素宽度锁定轨道，避免百分比/子像素误差导致下一张图露边或图片被二次裁切
+  function layout(){
+    W=win.clientWidth;
+    track.style.width=(W*n)+'px';
+    for(var k=0;k<n;k++){slides[k].style.width=W+'px';slides[k].style.flex='0 0 '+W+'px';slides[k].style.minWidth=W+'px';}
+    move();
+  }
+  function move(){track.style.transform='translateX(-'+(i*W)+'px)';}
   for(var k=0;k<n;k++){var d=document.createElement('button');d.className='car-dot';d.setAttribute('aria-label','Go to photo '+(k+1));(function(kk){d.addEventListener('click',function(){go(kk);restart();});})(k);dotsWrap.appendChild(d);dots.push(d);}
-  function go(idx){i=(idx+n)%n;track.style.transform='translateX(-'+(i*100)+'%)';for(var k=0;k<n;k++)dots[k].className='car-dot'+(k===i?' on':'');}
+  function go(idx){i=(idx+n)%n;move();for(var k=0;k<n;k++)dots[k].className='car-dot'+(k===i?' on':'');}
   function next(){go(i+1);} function prev(){go(i-1);}
   document.getElementById('aboutCarNext').addEventListener('click',function(){next();restart();});
   document.getElementById('aboutCarPrev').addEventListener('click',function(){prev();restart();});
   function restart(){if(timer)clearInterval(timer);timer=setInterval(next,5000);}
-  var car=document.querySelector('#aboutCarousel');
   car.addEventListener('mouseenter',function(){if(timer)clearInterval(timer);});
   car.addEventListener('mouseleave',restart);
   var sx=0;
-  document.querySelector('#aboutCarousel .car-window').addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
-  document.querySelector('#aboutCarousel .car-window').addEventListener('touchend',function(e){var ex=e.changedTouches[0].clientX;var dx=ex-sx;if(Math.abs(dx)>40){dx<0?next():prev();restart();}},{passive:true});
-  go(0); restart();
+  win.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  win.addEventListener('touchend',function(e){var ex=e.changedTouches[0].clientX;var dx=ex-sx;if(Math.abs(dx)>40){dx<0?next():prev();restart();}},{passive:true});
+  window.addEventListener('resize',layout);
+  window.addEventListener('load',layout);
+  layout(); go(0); restart();
 })();
 </script>
 
